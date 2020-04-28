@@ -13,7 +13,7 @@ import javax.ws.rs.client.WebTarget;
  * Jersey REST client generated for REST resource:we [cidade]<br>
  * USAGE:
  * <pre>
- *        ClienteRest client = new ClienteRest();
+ *        CidadeRest client = new CidadeRest();
  *        Object response = client.XXX(...);
  *        // do whatever with response
  *        client.close();
@@ -21,13 +21,13 @@ import javax.ws.rs.client.WebTarget;
  *
  * @author PC
  */
-public class ClienteRest {
+public class CidadeRest {
 
     private WebTarget webTarget;
     private Client client;
     private static final String BASE_URI = "http://maventest.herokuapp.com/mavenTest-1.0-SNAPSHOT/webresources/";
 
-    public ClienteRest() {
+    public CidadeRest() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
         webTarget = client.target(BASE_URI).path("cidade");
     }
