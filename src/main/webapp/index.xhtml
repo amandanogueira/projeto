@@ -8,7 +8,33 @@
         <title>Projeto Web Services</title>
     </h:head>
     <h:body>
-        Ollá Mundo!
+        <h:form>
+            <p:outputLabel value="Código"></p:outputLabel>
+            <p:inputText value="#{jsfCliente.cliente.codigo}" style="margin-left: 10px;" ></p:inputText>
+            <p:outputLabel value="Nome"  style="margin-left: 20px;" ></p:outputLabel>
+            <p:inputText value="#{jsfCliente.cliente.nome}" style="margin-left: 10px;" ></p:inputText>
+            <p:outputLabel value="Cidade" style="margin-left: 20px;"></p:outputLabel>
+            <p:selectOneMenu id="cidade" value="#{jsfCliente.cliente.cidade}" converter="cidadeConverter" style="margin-left: 10px;" >
+                <f:selectItems value="#{jsfCliente.allCidades}" var="cidade" itemValue="#{cidade.nome}" itemLabel="#{cidade.nome}"/>
+            </p:selectOneMenu>
+            <p:commandButton value="Salvar" actionListener="#{jsfCliente.salvar()}" update="formTabela" style="margin-left: 10px;" ></p:commandButton>
+        </h:form>
+        
+        <h:form id="formTabela" style="margin-top: 20px;" >
+            <p:outputLabel value="Lista de Clientes"></p:outputLabel>
+            <p:dataTable value="#{jsfCliente.allClientes}" var="cli">
+                <p:column headerText="Código">
+                    <h:outputText value="#{cli.codigo}" />
+                </p:column>
+            
+                <p:column headerText="Nome">
+                    <h:outputText value="#{cli.nome}" />
+                </p:column>
+                <p:column headerText="Cidade">
+                    <h:outputText value="#{cli.cidade.nome}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
     </h:body>
 </html>
 

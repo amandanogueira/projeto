@@ -28,26 +28,24 @@ public class JsfCliente{
     }
     
     public ArrayList<Cidade> getAllCidades(){
-        //CidadeRest cr = new CidadeRest();
-        //cidades = cr.get(ArrayList.class);
-        //cr.close();
-        //return cidades;
-        return null;
+        CidadeRest cr = new CidadeRest();
+        cidades = cr.get(ArrayList.class);
+        cr.close();
+        return cidades;
+        //return null;
     }
     
     public void salvar(){
-       // Cliente cli = new Cliente(codigo, nome, cidade);
-       // ClienteRest cr = new ClienteRest();
-      //  cr.addCliente(cliente);
-       // cr.close();
+        ClienteRest cr = new ClienteRest();
+        cr.addCliente(cliente);
+        cr.close();
     }
     
     public ArrayList<Cliente> getAllClientes(){
-       // ClienteRest cr = new ClienteRest();
-      //  ArrayList<Cliente> clientes = cr.getAll(ArrayList.class);
-       // cr.close();
-       // return clientes;
-       return null;
+        ClienteRest cr = new ClienteRest();
+        ArrayList<Cliente> clientes = cr.getAll(ArrayList.class);
+        cr.close();
+        return clientes;
     }
     
     private Cidade cidade = new Cidade();

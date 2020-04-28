@@ -25,7 +25,7 @@ public class ClienteRest {
 
     private WebTarget webTarget;
     private Client client;
-    private static final String BASE_URI = "https://projetowstest.herokuapp.com/projeto-1.0-SNAPSHOT/resources";
+    private static final String BASE_URI = "http://localhost:8080/projeto/resources";
 
     public ClienteRest() {
         client = javax.ws.rs.client.ClientBuilder.newClient();

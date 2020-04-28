@@ -20,10 +20,8 @@ public class CidadeConverter implements Converter {
 
     @Override
     public Cidade getAsObject(FacesContext fc, UIComponent uic, String nome) {
-        //System.out.println("String recebida no converter: " + string);
         if (nome != null && nome.trim().length() > 0) {
             Cidade cid = getCidadeNome(nome);
-            System.out.println("Cidade que está sendo retornada: " + cid.getNome() + " " + cid.getCodigo());
             return cid;
         }
         return null;
@@ -32,10 +30,8 @@ public class CidadeConverter implements Converter {
     @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object t) {
         if (t != null) {
-            System.out.println("Objeto recebido no converter: " + t.toString());
             String codigo = t.toString();
             Cidade cidade = getCidadeNome(codigo);
-            System.out.println("Objeto recebido no converter: " + cidade.toString());
             return cidade.getNome();
         }
         return null;
@@ -53,7 +49,6 @@ public class CidadeConverter implements Converter {
                 String scod = String.valueOf(hash.get("codigo"));
                 int cod = Integer.parseInt(scod);
                 Cidade cid = new Cidade(cod, nome);
-                System.out.println("Valores que cidade está recebendo: " + cod + " " + nome);
                 return cid;
             }
         }
